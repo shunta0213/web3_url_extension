@@ -12,12 +12,12 @@ const UrlList = () => {
             <ul>
                 {folder.map((value) => {
                     return (
-                        <li>
+                        <li key={value[0]}>
                             {value[0]}
                             <ul>
-                                {value.map((value1) => {
+                                {value.map((value1, index1) => {
                                     return (
-                                        <li>{value1}</li>
+                                        <li key={value[0] + index1}>{value1}</li>
                                     );
                                 })}
                             </ul>

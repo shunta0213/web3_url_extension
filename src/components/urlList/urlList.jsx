@@ -8,6 +8,7 @@ const folder = [ETH, Polygon];
 
 const UrlList = () => {
     return (
+        // とりあえず適当に
         <div id="urlList">
             <ul>
                 {folder.map((value) => {

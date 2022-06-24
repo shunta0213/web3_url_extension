@@ -11,6 +11,7 @@ const menuListStyle = {
     padding: "10px",
 }
 
+// アカウントのボタン
 const Account = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);

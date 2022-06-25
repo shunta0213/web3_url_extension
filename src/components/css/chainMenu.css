@@ -1,0 +1,14 @@
+#chainList {
+    position: fixed;
+    width: 50px;
+    background-color: pink;
+    border-radius: 25px 25px;
+}
+
+#chainList ul li {
+    text-align: center;
+}
+
+#chainList ul {
+    padding-left: 0;
+}

@@ -5,6 +5,10 @@ import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOu
 // Fab のスタイル
 const fabStyle = {
     margin: "0px 5px",
+    backgroundColor: "white",
+    "&:hover": {
+        backgroundColor: "pink",
+    }
 }
 // fabの中のスタイル
 const fabItemStyle = {
@@ -15,10 +19,6 @@ const fabItemStyle = {
 const Addition = () => {
     return (
         <div id="addition">
-            <Fab sx={fabStyle} variant="extended" size="medium" >
-                <AddCircleOutlineOutlinedIcon sx={fabItemStyle} />
-                Add Folder
-            </Fab>
             <Fab sx={fabStyle} variant="extended" size="medium" >
                 <AddCircleOutlineOutlinedIcon sx={fabItemStyle} />
                 Add URL

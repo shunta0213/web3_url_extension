@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { ReactDOM } from 'react';
-import '../css/header.css'
+import { ReactDOM } from 'react-dom';
+import '../css/appbar.css'
 import MenuIcon from '@mui/icons-material/Menu';
 import Account from './account';
 import { IconButton, } from '@mui/material';
 
+import { chainList } from "../chainMenu/chainMenu"
 
 const ResponsiveAppBar = () => {
     return (
@@ -12,7 +13,10 @@ const ResponsiveAppBar = () => {
             <IconButton>
                 <MenuIcon color="default" />
             </IconButton>
-            <div>Web3URLKeeper</div>
+            <div id="title">
+                <span>Web3URLKeeper</span>
+                <span class='chainTitle'>{chainList[0]}</span>
+            </div>
             <Account />
         </header>
     );

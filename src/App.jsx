@@ -9,10 +9,10 @@ const App = () => {
     <>
       {/* AppBar */}
       <ResponsiveAppBar />
+      <ChainMenu />
       {/* FOLDER,　URLの追加FAB */}
       <Addition />
       <div id="main">
-        <ChainMenu />
         <UrlList />
       </div>
     </>

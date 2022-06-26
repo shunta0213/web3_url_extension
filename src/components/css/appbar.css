@@ -21,6 +21,8 @@
 
 .app-header #title .chainTitle {
     font-size: small;
+    transform: translateY(-20%);
+    transition: 0.5s;
 }
 
 .accountIcon {

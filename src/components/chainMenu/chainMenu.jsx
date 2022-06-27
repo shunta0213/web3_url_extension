@@ -15,7 +15,7 @@ const ChainMenu = (props) => {
                 {chainList.map((value, index) => {
                     if (index === selectedChainIndex) {
                         return (
-                            <li key={index} >
+                            <li key={"chainList" + index} >
                                 <button onClick={() => changeSelectedChain(index)}>
                                     <HomeIcon className="selectedChainIcon" />
                                     <span className="chainListTitle" >{value}</span>
@@ -24,7 +24,7 @@ const ChainMenu = (props) => {
                         );
                     }
                     return (
-                        <li key={index} >
+                        <li key={"chainList" + index} >
                             <button onClick={() => changeSelectedChain(index)}>
                                 <HomeIcon />
                                 <span className="chainListTitle" >{value}</span>

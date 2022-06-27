@@ -15,7 +15,7 @@ const App = () => {
       {/* FOLDER,　URLの追加FAB */}
       <Addition />
       <div id="main">
-        <UrlList />
+        <UrlList selectedChainIndex={selectedChainIndex} />
       </div>
     </>
   );

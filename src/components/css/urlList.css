@@ -1,3 +1,11 @@
 #urlList {
     margin-left: 50px;
 }
+
+#urlAllList {
+    padding: 8px;
+}
+
+#urlAllList a {
+    color: black;
+}

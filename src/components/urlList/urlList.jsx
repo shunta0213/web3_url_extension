@@ -32,7 +32,7 @@ const binance = [["Binance", "https://www.binance.com/en"]];
 const polygon = [["Polygon", "https://polygon.technology/"], ["PolygonScan", "https://polygonscan.com/"], ["QuickSwap", "https://quickswap.exchange/#/swap"]]
 const urlFolder = [all, eth, solana, binance, polygon]
 
-const leadingImages = [ethereumImage, solanaImage, binanceImage, polygonImage]
+export const leadingImages = [ethereumImage, solanaImage, binanceImage, polygonImage]
 
 
 

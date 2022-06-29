@@ -22,7 +22,7 @@ const Account = () => {
         setAnchorEl(null);
     }
     return (
-        <div>
+        <div id="account">
             <IconButton
                 id="basic-button"
                 aria-controls={open ? "basic-menu" : undefined}

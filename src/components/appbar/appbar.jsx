@@ -11,7 +11,7 @@ const ResponsiveAppBar = (props) => {
         <header className="app-header">
             <div id="title">
                 <span><Typography>Web3URLKeeper</Typography></span>
-                <span class='chainTitle'><Typography>{chainList[selectedChainIndex]}</Typography></span>
+                <span><Typography sx={{ fontSize: "small" }}>{chainList[selectedChainIndex]}</Typography></span>
             </div>
             <Account />
         </header>

@@ -1,4 +1,5 @@
 #addition {
+    z-index: 20;
     display: flex;
     justify-content: flex-end;
     position: fixed;

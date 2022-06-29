@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ResponsiveAppBar from './components/appbar/appbar';
-import Addition from './components/addition/addition';
+import AddBookmark from './components/addition/addBookmark';
 import UrlList from './components/urlList/urlList';
 import ChainMenu from './components/chainMenu/chainMenu';
 
@@ -13,7 +13,7 @@ const App = () => {
       <ResponsiveAppBar selectedChainIndex={selectedChainIndex} />
       <ChainMenu selectedChainIndex={selectedChainIndex} setSelectedChainIndex={setSelectedChainIndex} />
       {/* FOLDER,　URLの追加FAB */}
-      <Addition />
+      <AddBookmark />
       <div id="main">
         <UrlList selectedChainIndex={selectedChainIndex} />
       </div>

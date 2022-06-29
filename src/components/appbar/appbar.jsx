@@ -1,9 +1,9 @@
 import * as React from 'react';
-import '../css/appbar.css'
 import Account from './account';
 import { Typography } from '@mui/material';
-
 import { chainList } from "../chainMenu/chainMenu"
+import '../css/appbar.css'
+
 
 const ResponsiveAppBar = (props) => {
     const { selectedChainIndex } = props;

@@ -1,5 +1,9 @@
 import React from "react";
+// package
 import HomeIcon from '@mui/icons-material/Home';
+// components
+import AddChainButton from "./AddChainButton";
+// css
 import "../css/chainMenu.css"
 
 export const chainList = ["All", "Ethereum", "Solana", "Binance", "Polygon"];
@@ -32,6 +36,7 @@ const ChainMenu = (props) => {
                         </li>
                     );
                 })}
+                <AddChainButton />
             </ul>
         </div>
     );

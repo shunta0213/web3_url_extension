@@ -1,4 +1,5 @@
 #chainList {
+    z-index: 20;
     position: fixed;
     background-color: white;
     border-radius: 25px 25px;

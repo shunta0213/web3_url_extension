@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/header.css";
+import "../css/appbar.css";
 import "../css/addition.css"
 import PersonIcon from '@mui/icons-material/Person';
 import { IconButton, Menu, MenuList, } from "@mui/material";
@@ -11,6 +11,7 @@ const menuListStyle = {
     padding: "10px",
 }
 
+// アカウントのボタン
 const Account = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -21,7 +22,7 @@ const Account = () => {
         setAnchorEl(null);
     }
     return (
-        <div>
+        <div id="account">
             <IconButton
                 id="basic-button"
                 aria-controls={open ? "basic-menu" : undefined}

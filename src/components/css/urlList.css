@@ -1,7 +1,19 @@
-ul {
-    list-style: none;
+#urlList {
+    margin-left: 50px;
 }
 
-#urlList {
-    padding-top: 100px;
+#urlAllList {
+    padding: 8px;
+}
+
+#urlAllList a {
+    color: black;
+}
+
+#urlEachTab {
+    padding: 8px;
+}
+
+#urlEachTab a {
+    color: black;
 }

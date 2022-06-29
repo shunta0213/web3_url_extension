@@ -1,10 +1,29 @@
 import React from "react";
+import { Fab } from "@mui/material";
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 
+// Fab のスタイル
+const fabStyle = {
+    margin: "0px 5px",
+    backgroundColor: "white",
+    "&:hover": {
+        backgroundColor: "pink",
+    }
+}
+// fabの中のスタイル
+const fabItemStyle = {
+    margin: "0 5px 0 0",
+}
+
+// フォルダとファイルを追加するFAB
 const Addition = () => {
     return (
         <div id="addition">
-            <div>Add Folder</div>
-            <div>Add URL</div>
+            <Fab sx={fabStyle} variant="extended" size="medium" >
+                <AddCircleOutlineOutlinedIcon sx={fabItemStyle} />
+                Add URL
+            </Fab>
+
         </div>
     );
 }

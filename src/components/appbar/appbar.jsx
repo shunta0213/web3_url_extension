@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { ReactDOM } from 'react';
-import '../css/header.css'
-import MenuIcon from '@mui/icons-material/Menu';
+import '../css/appbar.css'
 import Account from './account';
-import { IconButton, } from '@mui/material';
+import { Typography } from '@mui/material';
 
+import { chainList } from "../chainMenu/chainMenu"
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = (props) => {
+    const { selectedChainIndex } = props;
     return (
         <header className="app-header">
-            <IconButton>
-                <MenuIcon color="default" />
-            </IconButton>
-            <div>Web3URLKeeper</div>
+            <div id="title">
+                <span><Typography>Web3URLKeeper</Typography></span>
+                <span><Typography sx={{ fontSize: "small" }}>{chainList[selectedChainIndex]}</Typography></span>
+            </div>
             <Account />
         </header>
     );

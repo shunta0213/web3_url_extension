@@ -13,3 +13,7 @@
 #urlEachTab {
     padding: 8px;
 }
+
+#urlEachTab a {
+    color: black;
+}

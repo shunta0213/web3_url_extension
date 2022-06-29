@@ -9,3 +9,7 @@
 #urlAllList a {
     color: black;
 }
+
+#urlEachTab {
+    padding: 8px;
+}

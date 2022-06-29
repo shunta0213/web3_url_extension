@@ -1,7 +1,7 @@
 import React from "react";
-import { AccordionDetails } from "@mui/material";
 // components
-import AllUrlList from "./urlAllList";
+import AllUrlList from "./urlAllTab";
+import UrlEachChainTab from "./urlEachChainTab"
 // css
 import "../css/urlList.css"
 // images
@@ -34,6 +34,19 @@ const urlFolder = [all, eth, solana, binance, polygon]
 
 const leadingImages = [ethereumImage, solanaImage, binanceImage, polygonImage]
 
+
+
+export const accordionStyle = {
+    margin: "2px",
+}
+
+export const accordionSummaryStyle = {
+    fontSize: 20,
+    fontWeight: "bold",
+    padding: "0px 8px",
+}
+
+
 const UrlList = (props) => {
     const { selectedChainIndex } = props;
     return (
@@ -46,15 +59,7 @@ const UrlList = (props) => {
                     }
                     return (<AllUrlList value={value} leadingImage={leadingImages[index - 1]} />)
                 } else if (selectedChainIndex === index) {
-                    return (
-                        value.map((value1, index1) => {
-                            return (
-                                <AccordionDetails key={"accordion-List" + index1}>
-                                    {value1}
-                                </AccordionDetails>
-                            )
-                        })
-                    )
+                    return (<UrlEachChainTab value={value} index={index} leadingImage={leadingImages[index - 1]} />)
                 } else {
                     ;
                 }

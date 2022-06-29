@@ -1,24 +1,16 @@
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
-import React from "react";
+import React from "react"
+import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// css
-import "../css/urlList.css"
+import { accordionStyle, accordionSummaryStyle } from "./urlList"
 
-const accordionStyle = {
-    margin: "2px",
-}
-
-const accordionSummaryStyle = {
-    fontSize: 20,
-    fontWeight: "bold",
-    padding: "0px 8px",
-}
-
-const AllUrlList = (props) => {
-    const { value, leadingImage } = props
+const UrlEachChainTab = (props) => {
+    const { value, index, leadingImage } = props
     return (
-        <div id="urlAllList">
-            <Accordion sx={accordionStyle}>
+        <div id="urlEachTab" key={"urlList" + index}>
+            <Accordion
+                sx={accordionStyle}
+                defaultExpanded={true}
+            >
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
@@ -37,8 +29,8 @@ const AllUrlList = (props) => {
                     )
                 })}
             </Accordion>
-        </div>
+        </div >
     )
 }
 
-export default AllUrlList
+export default UrlEachChainTab

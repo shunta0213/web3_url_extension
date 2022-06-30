@@ -5,7 +5,9 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import "../css/addBookmark.css"
 
 const AddBookmarkDialog = (props) => {
-    const { isOpen, handleClickClose, selectedChain, setSelectedChain, newUrl, setNewUrl } = props
+    const { isOpen, handleClickClose, urlFolder, setUrlFolder } = props
+    const [selectedChain, setSelectedChain] = useState();
+    const [newUrl, setNewUrl] = useState("");
     const [expanded, setExpanded] = useState(false);
     return (
         <Dialog open={isOpen} onClose={handleClickClose}>
@@ -44,9 +46,17 @@ const AddBookmarkDialog = (props) => {
                                     <FormControlLabel value="polygon" control={<Radio />} label="polygon" sx={{ display: "block" }} />
                                 </div>
                             </RadioGroup>
+                            <Typography>AddChain</Typography>
                         </FormControl>
                     </AccordionDetails>
                 </Accordion>
+                <Typography sx={{ padding: "8px" }}>Name</Typography>
+                <TextField
+                    id="standard-basic" label=""
+                    variant="standard" sx={{ width: "100%" }}
+                    // TODO: change onChange function
+                    onChange={(event) => setNewUrl(event.target.value)}
+                />
                 <Typography sx={{ padding: "8px" }}>UrL</Typography>
                 <TextField id="standard-basic" label="" variant="standard" sx={{ width: "100%" }} onChange={(event) => setNewUrl(event.target.value)} />
                 <div className="addBookMarkDialogButtons">

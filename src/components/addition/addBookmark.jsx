@@ -17,8 +17,9 @@ const fabItemStyle = {
     margin: "0 5px 0 0",
 }
 
-// フォルダとファイルを追加するFAB
-const AddBookmark = () => {
+// BookMark追加するFAB
+const AddBookmark = (props) => {
+    const { urlFolder, setUrlFolder } = props
     // Dialog の状態
     const [isOpen, setIsOpen] = useState(false)
     const handleClickOpen = () => {
@@ -28,9 +29,6 @@ const AddBookmark = () => {
     const handleClickClose = () => {
         setIsOpen(false)
     }
-    // Dialog内の選択されている状態管理
-    const [selectedChain, setSelectedChain] = useState();
-    const [newUrl, setNewUrl] = useState("");
     return (
         <div id="addBookmark">
             <Fab sx={fabStyle} variant="extended" size="medium" onClick={handleClickOpen}>
@@ -40,10 +38,8 @@ const AddBookmark = () => {
             <AddBookmarkDialog
                 isOpen={isOpen}
                 handleClickClose={handleClickClose}
-                selectedChain={selectedChain}
-                setSelectedChain={setSelectedChain}
-                newUrl={newUrl}
-                setNewUrl={setNewUrl}
+                urlFolder={urlFolder}
+                setUrlFolder={setUrlFolder}
             />
         </div>
     );

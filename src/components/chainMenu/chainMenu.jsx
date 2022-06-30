@@ -24,6 +24,7 @@ const ChainMenu = (props) => {
         setIsOpen(true)
     }
     return (
+        // TODO:写真がボタンを押した際に角が途切れる問題
         <div id="chainList" style={{ height: (urlFolder.length + 3) * 55 }} >
             <ul>
                 <li>

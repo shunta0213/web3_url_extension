@@ -8,3 +8,13 @@
     height: 50px;
     width: 500px;
 }
+
+.AddBookmarkDialogSelectChain {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addBookMarkDialogButtons {
+    display: flex;
+    justify-content: space-between;
+}

@@ -29,7 +29,8 @@ const AddBookmark = () => {
         setIsOpen(false)
     }
     // Dialog内の選択されている状態管理
-    const [selectedChain, setSelectedChain] = useState("ethereum");
+    const [selectedChain, setSelectedChain] = useState();
+    const [newUrl, setNewUrl] = useState("");
     return (
         <div id="addBookmark">
             <Fab sx={fabStyle} variant="extended" size="medium" onClick={handleClickOpen}>
@@ -41,6 +42,8 @@ const AddBookmark = () => {
                 handleClickClose={handleClickClose}
                 selectedChain={selectedChain}
                 setSelectedChain={setSelectedChain}
+                newUrl={newUrl}
+                setNewUrl={setNewUrl}
             />
         </div>
     );

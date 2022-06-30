@@ -10,3 +10,19 @@
 ul {
   list-style: none;
 }
+
+/* スクロールバー */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, blue, red);
+  width: 130px;
+  border-radius: 4px;
+}

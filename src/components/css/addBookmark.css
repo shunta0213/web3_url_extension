@@ -1,0 +1,28 @@
+/* Add Bookmark */
+#addBookmark {
+    z-index: 20;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    display: flex;
+    margin-top: 70px;
+    height: 50px;
+    width: 500px;
+}
+
+.AddBookmarkDialogSelectChain {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addBookMarkDialogButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Add Chain */
+.addChainDialogAddPhoto {
+    display: flex;
+    align-items: center;
+    margin: 4px;
+}

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 // package
 import HomeIcon from '@mui/icons-material/Home';
 // components
 import AddChainButton from "./AddChainButton";
 import { leadingImages } from "../urlList/urlList"
+import AddChain from "../addition/addChain"
 // css
 import "../css/chainMenu.css"
 
@@ -15,6 +16,14 @@ const ChainMenu = (props) => {
     const changeSelectedChain = (index) => {
         setSelectedChainIndex(index);
     };
+    // addchainの状態
+    const [isOpen, setIsOpen] = useState(false)
+    const handleClickClose = () => {
+        setIsOpen(false)
+    }
+    const openAddChainDialog = () => {
+        setIsOpen(true)
+    }
     return (
         <div id="chainList">
             <ul>
@@ -42,7 +51,8 @@ const ChainMenu = (props) => {
                         </li>
                     );
                 })}
-                <AddChainButton />
+                <AddChainButton openAddChainDialog={openAddChainDialog} />
+                <AddChain isOpen={isOpen} handleClickClose={handleClickClose} />
             </ul>
         </div>
     );

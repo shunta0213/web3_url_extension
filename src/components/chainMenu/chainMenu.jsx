@@ -8,15 +8,14 @@ import AddChain from "../addition/addChain"
 // css
 import "../css/chainMenu.css"
 
-export const chainList = ["All", "Ethereum", "Solana", "Binance", "Polygon"];
 
 
 const ChainMenu = (props) => {
-    const { selectedChainIndex, setSelectedChainIndex } = props;
+    const { urlFolder, selectedChainIndex, setSelectedChainIndex } = props;
     const changeSelectedChain = (index) => {
         setSelectedChainIndex(index);
     };
-    // addchainの状態
+    // addChainの状態
     const [isOpen, setIsOpen] = useState(false)
     const handleClickClose = () => {
         setIsOpen(false)
@@ -27,15 +26,20 @@ const ChainMenu = (props) => {
     return (
         <div id="chainList">
             <ul>
-                {chainList.map((value, index) => {
+                <li>
+                    <button onClick={() => changeSelectedChain("all")}>
+                        <span className="chainListLeadingIcon">{selectedChainIndex === "all" ? <HomeIcon className="selectedChainIcon" /> : <HomeIcon />}</span>
+                    </button>
+                </li>
+                {urlFolder.map((value, index) => {
                     if (index === selectedChainIndex) {
                         return (
                             <li key={"chainList" + index} >
                                 <button onClick={() => changeSelectedChain(index)}>
                                     <span className="chainListLeadingIcon">
-                                        {index === 0 ? <HomeIcon className="selectedChainIcon" /> : <img className="selectedChainIcon" alt="" src={leadingImages[index - 1]} width={30} height={30} sx={{ padding: "4px" }} />}
+                                        <img className="selectedChainIcon" alt="" src={leadingImages[index]} width={30} height={30} sx={{ padding: "4px" }} />
                                     </span>
-                                    <span className="chainListTitle" >{value}</span>
+                                    <span className="chainListTitle" >{value[0]}</span>
                                 </button>
                             </li>
                         );
@@ -44,9 +48,9 @@ const ChainMenu = (props) => {
                         <li key={"chainList" + index} >
                             <button onClick={() => changeSelectedChain(index)}>
                                 <span className="chainListLeadingIcon">
-                                    {index === 0 ? <HomeIcon /> : <img alt="" src={leadingImages[index - 1]} width={30} height={30} sx={{ padding: "4px" }} />}
+                                    <img alt="" src={leadingImages[index]} width={30} height={30} sx={{ padding: "4px" }} />
                                 </span>
-                                <span className="chainListTitle" >{value}</span>
+                                <span className="chainListTitle" >{value[0]}</span>
                             </button>
                         </li>
                     );

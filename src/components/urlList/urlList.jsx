@@ -44,19 +44,15 @@ export const accordionSummaryStyle = {
 const UrlList = (props) => {
     const { selectedChainIndex, urlFolder } = props;
     return (
-        // とりあえず適当に
         <div id="urlList">
             {urlFolder.map((value, index) => {
-                if (selectedChainIndex === 0) {
-                    if (index === 0) {
-                        return (null)
-                    }
-                    return (<AllUrlList value={value} leadingImage={leadingImages[index - 1]} />)
+                if (selectedChainIndex === "all") {
+                    console.log(value)
+                    return (<AllUrlList value={value} leadingImage={leadingImages[index]} />)
                 } else if (selectedChainIndex === index) {
-                    return (<UrlEachChainTab value={value} index={index} leadingImage={leadingImages[index - 1]} />)
-                } else {
-                    ;
+                    return (<UrlEachChainTab value={value} index={index} leadingImage={leadingImages[index]} />)
                 }
+                return null
             })}
         </div>
     );

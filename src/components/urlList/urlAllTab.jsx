@@ -17,9 +17,12 @@ const AllUrlList = (props) => {
                     id="panel1a-header"
                 >
                     <img alt="" src={leadingImage} width={30} height={30} sx={{ padding: "4px" }} />
-                    <Typography sx={accordionSummaryStyle}>{value[0][0]}</Typography>
+                    <Typography sx={accordionSummaryStyle}>{value[0]}</Typography>
                 </AccordionSummary>
                 {value.map((value1, index1) => {
+                    if (index1 === 0) {
+                        return null
+                    }
                     return (
                         <AccordionDetails key={"accordion-List" + index1}>
                             <a href={value1[1]} target="_blank" rel="noreferrer">

@@ -1,14 +1,27 @@
 import React, { useState } from "react";
-import { Dialog, DialogContent, DialogTitle, FormControl, FormControlLabel, Radio, RadioGroup, Typography, AccordionSummary, Accordion, AccordionDetails, TextField, Button } from "@mui/material";
+import { Dialog, DialogContent, DialogTitle, FormControl, FormControlLabel, Radio, RadioGroup, Typography, AccordionSummary, Accordion, AccordionDetails, TextField, Button, selectClasses } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // css
 import "../css/addBookmark.css"
 
 const AddBookmarkDialog = (props) => {
     const { isOpen, handleClickClose, urlFolder, setUrlFolder } = props
-    const [selectedChain, setSelectedChain] = useState();
-    const [newUrl, setNewUrl] = useState("");
+    const [newSelectedChain, setNewSelectedChain] = useState();
+    const [newBookMarkName, setNewBookMarkName] = useState("");
+    const [newBookMarkUrl, setNewBookMarkUrl] = useState("");
     const [expanded, setExpanded] = useState(false);
+    const setBookmark = (chain, name, url) => {
+        let newUrlFolder = []
+        urlFolder.forEach((elem, index) => {
+            if (elem[0] === chain) {
+                let tempFolder = [...elem, [name, url]]
+                newUrlFolder = [...newUrlFolder, tempFolder]
+            } else {
+                newUrlFolder = [...newUrlFolder, elem]
+            }
+        })
+        setUrlFolder(newUrlFolder)
+    }
     return (
         <Dialog open={isOpen} onClose={handleClickClose}>
             <DialogTitle><Typography sx={{ fontSize: "large", fontWeight: "bold" }}>Add Bookmark</Typography></DialogTitle>
@@ -21,30 +34,24 @@ const AddBookmarkDialog = (props) => {
                         id="panel1a-header"
                     >
                         <span className="AddBookmarkDialogSelectChain">
-                            <Typography sx={{ fontWeight: "bold" }}> {selectedChain} </Typography>
+                            <Typography sx={{ fontWeight: "bold" }}> {newSelectedChain} </Typography>
                         </span>
                     </AccordionSummary>
                     <AccordionDetails>
                         <FormControl>
                             <RadioGroup
                                 aria-labelledby="select-chain-radio-buttons-group-label"
-                                defaultValue="ethereum"
                                 name="select-chain-radio-buttons-group"
-                                value={selectedChain}
+                                value={newSelectedChain}
                                 onChange={(event) => {
                                     // 値のセット
-                                    setSelectedChain(event.target.value)
+                                    setNewSelectedChain(event.target.value)
                                     // アコーディオンを閉じる
                                     setExpanded(false)
                                 }}
                                 sx={{ height: "200px", width: "300px", overflow: "scroll", overflowX: "hidden" }}
                             >
-                                <div>
-                                    <FormControlLabel value="ethereum" control={<Radio />} label="ethereum" sx={{ display: "block" }} />
-                                    <FormControlLabel value="solana" control={<Radio />} label="solana" sx={{ display: "block" }} />
-                                    <FormControlLabel value="binance" control={<Radio />} label="binance" sx={{ display: "block" }} />
-                                    <FormControlLabel value="polygon" control={<Radio />} label="polygon" sx={{ display: "block" }} />
-                                </div>
+                                {urlFolder.map((value) => <FormControlLabel key={value[0]} value={value[0]} label={value[0]} control={<Radio />} sx={{ display: "block" }} />)}
                             </RadioGroup>
                             <Typography>AddChain</Typography>
                         </FormControl>
@@ -54,13 +61,22 @@ const AddBookmarkDialog = (props) => {
                 <TextField
                     id="standard-basic" label=""
                     variant="standard" sx={{ width: "100%" }}
-                    // TODO: change onChange function
-                    onChange={(event) => setNewUrl(event.target.value)}
+                    onChange={(event) => setNewBookMarkName(event.target.value)}
                 />
                 <Typography sx={{ padding: "8px" }}>UrL</Typography>
-                <TextField id="standard-basic" label="" variant="standard" sx={{ width: "100%" }} onChange={(event) => setNewUrl(event.target.value)} />
+                <TextField id="standard-basic"
+                    label="" variant="standard"
+                    sx={{ width: "100%" }}
+                    onChange={(event) => setNewBookMarkUrl(event.target.value)}
+                />
                 <div className="addBookMarkDialogButtons">
-                    <Button variant="contained" sx={{ padding: "4px", margin: "10px 4px" }}>Confirm</Button>
+                    <Button
+                        variant="contained"
+                        sx={{ padding: "4px", margin: "10px 4px" }}
+                        onClick={() => setBookmark(newSelectedChain, newBookMarkName, newBookMarkUrl)}
+                    >
+                        Confirm
+                    </Button>
                     <Button variant="outlined" sx={{ padding: "4px", margin: "10px 4px" }}>Reset</Button>
                 </div>
             </DialogContent>

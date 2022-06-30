@@ -4,7 +4,6 @@ import HomeIcon from '@mui/icons-material/Home';
 // components
 import AddChainButton from "./AddChainButton";
 import AddChain from "../addition/addChain"
-import AddBookmark from '../addition/addBookmark';
 
 // css
 import "../css/chainMenu.css"

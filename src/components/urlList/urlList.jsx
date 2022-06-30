@@ -4,11 +4,6 @@ import AllUrlList from "./urlAllTab";
 import UrlEachChainTab from "./urlEachChainTab"
 // css
 import "../css/urlList.css"
-// images
-import ethereumImage from "../../img/ethereum.svg"
-import binanceImage from "../../img/binance.svg"
-import polygonImage from "../../img/polygon.svg"
-import solanaImage from "../../img/solana.svg"
 
 
 
@@ -26,8 +21,6 @@ import solanaImage from "../../img/solana.svg"
 // }
 
 
-export const leadingImages = [ethereumImage, solanaImage, binanceImage, polygonImage]
-
 
 
 export const accordionStyle = {
@@ -42,7 +35,7 @@ export const accordionSummaryStyle = {
 
 
 const UrlList = (props) => {
-    const { selectedChainIndex, urlFolder } = props;
+    const { selectedChainIndex, urlFolder, leadingImages } = props;
     return (
         <div id="urlList">
             {urlFolder.map((value, index) => {

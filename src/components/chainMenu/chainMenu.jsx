@@ -3,15 +3,16 @@ import React, { useState } from "react";
 import HomeIcon from '@mui/icons-material/Home';
 // components
 import AddChainButton from "./AddChainButton";
-import { leadingImages } from "../urlList/urlList"
 import AddChain from "../addition/addChain"
+import AddBookmark from '../addition/addBookmark';
+
 // css
 import "../css/chainMenu.css"
 
 
 
 const ChainMenu = (props) => {
-    const { urlFolder, selectedChainIndex, setSelectedChainIndex } = props;
+    const { urlFolder, setUrlFolder, selectedChainIndex, setSelectedChainIndex, leadingImages } = props;
     const changeSelectedChain = (index) => {
         setSelectedChainIndex(index);
     };
@@ -24,7 +25,7 @@ const ChainMenu = (props) => {
         setIsOpen(true)
     }
     return (
-        <div id="chainList">
+        <div id="chainList" style={{ height: (urlFolder.length + 3) * 55 }} >
             <ul>
                 <li>
                     <button onClick={() => changeSelectedChain("all")}>
@@ -37,7 +38,7 @@ const ChainMenu = (props) => {
                             <li key={"chainList" + index} >
                                 <button onClick={() => changeSelectedChain(index)}>
                                     <span className="chainListLeadingIcon">
-                                        <img className="selectedChainIcon" alt="" src={leadingImages[index]} width={30} height={30} sx={{ padding: "4px" }} />
+                                        <img className="selectedChainIcon" src={leadingImages[index]} alt="" width={30} height={30} sx={{ padding: "4px" }} />
                                     </span>
                                     <span className="chainListTitle" >{value[0]}</span>
                                 </button>
@@ -56,7 +57,7 @@ const ChainMenu = (props) => {
                     );
                 })}
                 <AddChainButton openAddChainDialog={openAddChainDialog} />
-                <AddChain isOpen={isOpen} handleClickClose={handleClickClose} />
+                <AddChain urlFolder={urlFolder} setUrlFolder={setUrlFolder} isOpen={isOpen} handleClickClose={handleClickClose} />
             </ul>
         </div>
     );

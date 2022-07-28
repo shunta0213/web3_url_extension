@@ -25,12 +25,6 @@ import solanaImage from "../../img/solana.svg"
 //     ]
 // }
 
-const all = []
-const eth = [["Ethereum", "https://ethereum.org/en/"], ["uniswap", "https://uniswap.org/"]];
-const solana = [["Solana", "https://solana.com/"]]
-const binance = [["Binance", "https://www.binance.com/en"]];
-const polygon = [["Polygon", "https://polygon.technology/"], ["PolygonScan", "https://polygonscan.com/"], ["QuickSwap", "https://quickswap.exchange/#/swap"]]
-const urlFolder = [all, eth, solana, binance, polygon]
 
 export const leadingImages = [ethereumImage, solanaImage, binanceImage, polygonImage]
 
@@ -48,7 +42,7 @@ export const accordionSummaryStyle = {
 
 
 const UrlList = (props) => {
-    const { selectedChainIndex } = props;
+    const { selectedChainIndex, urlFolder } = props;
     return (
         // とりあえず適当に
         <div id="urlList">

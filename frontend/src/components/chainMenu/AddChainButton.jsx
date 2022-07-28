@@ -2,10 +2,11 @@ import React from "react";
 import AddIcon from '@mui/icons-material/Add';
 import { IconButton } from "@mui/material";
 
-const AddChainButton = () => {
+const AddChainButton = (props) => {
+    const { openAddChainDialog } = props;
     return (
         <div id="addChainButton">
-            <IconButton aria-label="Add" >
+            <IconButton aria-label="Add" onClick={openAddChainDialog}>
                 <AddIcon />
             </IconButton>
         </div>

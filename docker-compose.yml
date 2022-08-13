@@ -19,6 +19,7 @@ services:
     ports:
       - 3001:3001
     working_dir: /usr/src/app
+    # TODO:containerが起動し続けるようにコマンドを設定する必要がある
     command: sh -c "yarn install && yarn global add nodemon && nodemon app.js"
     networks:
       - react-node-mysql

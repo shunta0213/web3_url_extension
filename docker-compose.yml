@@ -6,6 +6,7 @@ networks:
 
 services:
   express:
+    # TODO: Expressを使わない予定？なので名前の変更
     build: ./backend/dockerfile
     container_name: express-container
     hostname: express-server
